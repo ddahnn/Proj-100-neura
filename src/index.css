@@ -1,4 +1,4 @@
-@import url(components/roots.css);
+@import url('./components/roots.css');
 
 
 *{
@@ -29,21 +29,21 @@ nav{
     background-color: var(--white-background);
     width: 100%;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items:center;
-    padding:20px;
+    padding:10px;
     
 }
-header>nav>img{
+header>nav>a>img{
     height: 55px;
-    padding-left: 25px;
+    padding-left: 20px;
     
 }
 
 header>nav>ul{
     list-style-type: none;
     display: flex;
-    width: 800px;
+    width: 950px;
     justify-content: space-around;
 }
 
@@ -54,7 +54,9 @@ header>nav>ul>li>a:visited {
     text-decoration: none;
     border-bottom: 2px solid transparent;
     text-transform: uppercase;
-    transition: border-bottom .3s, color .3s;
+    font-weight: 300;
+    font-size: 15px;
+    transition: border-bottom .4s, color .4s;
     padding-bottom: 4px;
     padding-left: 6px;
 }
@@ -65,6 +67,72 @@ header>nav>ul>li>a:active {
     border-bottom: 2px solid #441764;
     
 }
+
+
+/**********************/
+/******MENU LOGIN******/
+/*******CADASTRO*******/
+/**********************/
+
+
+nav>ul>li>.btn-login:link,
+nav>ul>li>.btn-login:visited{
+    border:1px solid var(--black);
+    border-radius: 50px;
+    padding:5px 5px 5px 12px;
+    background-color: var(--purple-40);
+    color: var(--white-background);
+    transition: color .3s, background-color .3s,  border .3s ;
+}
+
+nav>ul>li>.btn-login:hover,
+nav>ul>li>.btn-login:active{
+    background-color: var(--white-background);
+    color:var(--dark-purple);
+    border:1px solid var(--dark-purple);
+}
+
+nav>ul>li>.btn-cadastrar:link,
+nav>ul>li>.btn-cadastrar:visited{
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    padding: 5px 5px 5px 12px;
+    background-color: var(--white-background);
+    color: var(--dark-purple);
+    transition: color .3s, background-color .3s, border .3s;
+}
+
+nav>ul>li>.btn-cadastrar:hover,
+nav>ul>li>.btn-cadastrar:active{
+    background-color: var(--purple-40);
+    color: var(--white-background);
+}
+
+
+
+
+
+
+.hid{
+    height: 10px;
+    opacity:0;
+    transform: translate(-9px);
+    transition:all .3s ease-in-out;
+}
+
+.btn-login:hover .hid{
+    opacity: 1;
+    transform: translate(1px);
+}
+
+.btn-cadastrar:hover .hid{
+    opacity: 1;
+    transform: translate(1px);
+}
+
+
+
+
 
 
 /**********************/
@@ -95,9 +163,12 @@ header>nav>ul>li>a:active {
 .input-pesquisa.ativo {
     width: 200px;
     opacity: 1;
-    padding: 8px 12px;
+    padding: 8px 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    margin-right:40px;
+    transition: 0.3s;
+
 }
 
 
@@ -129,6 +200,7 @@ header>.hero-section {
     width: 55%;
     color:var(--white-background);
     left: 70px;
+    
 }
 
 
@@ -143,4 +215,83 @@ header>.hero-section {
 
 .orange-text{
     color: var(--text-orange);
+}
+
+
+
+/************************/
+/******HERO-SECTION******/
+/**********CTA***********/
+/************************/
+
+
+.btn-hero {
+    display: block;
+    margin-top: 30px;
+    padding: 10px 0;
+}
+
+.btn-hero .btn {
+    text-decoration: none;
+    border: 2px solid black ;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    display:block;
+}
+
+.btn-primary:link,
+.btn-primary:visited{
+    color: black;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    box-shadow: 7px 5px #fff;
+    
+    
+}
+
+
+.btn-secondary{
+    color: black;
+    background-color: var(--text-orange);
+    margin-bottom: 10px;
+    border: 3px solid black;
+    box-shadow: 7px 5px var(--text-orange);
+}
+
+.btn-third{
+    color: black;
+    background-color: var(--text-green);
+    margin-bottom: 10px;
+    border: 3px solid black;
+    box-shadow: 7px 5px var(--text-green);
+}
+
+
+.hidden{
+    height: 12px;
+    opacity: 0;
+    transform:translate(-20px);
+    transition:all .3s ease-in-out;
+    
+}
+
+.btn:hover .hidden{
+    opacity: 1;
+    transform: translate(5px);
+}
+
+.hidden:link,
+.hidden:visited {
+    display: show;
+}
+
+
+
+.btn-hero>ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
 }
