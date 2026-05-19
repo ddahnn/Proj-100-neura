@@ -1,5 +1,6 @@
 import React from 'react';
 import Pesquisa from './pesquisar';
+
 export const HeaderNav = () =>  {
     return  (
         <nav>
@@ -13,7 +14,7 @@ export const HeaderNav = () =>  {
                 <li><a href="#">Sou Terapeuta</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#" className="btn-login">Login <img src="../src/assets/seta.png" alt="seta " className="hid" /></a></li>
-                <li><a href="#" className="btn-cadastrar">Cadastrar <img src="https://www.figma.com/design/y2eL9Mkr7vAVRJHUCK3zdc/Arrows-Icons---Free--Community-?node-id=3-182&m=dev&t=v30cwqmy3JLUZM46-1" alt="seta " className="hid" style={{ height: '15px' }} /></a></li>
+                <li><a href="#" className="btn-cadastrar">Cadastrar <img src="../src/assets/arrow-withe.png" alt="seta " className="hid"  /></a></li>
                 <li><Pesquisa/></li>
             </ul>
         </nav>
