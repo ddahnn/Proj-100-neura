@@ -1,0 +1,46 @@
+@media (min-width:768px) {
+
+    .container{
+        width: 100%;   
+    }
+
+    nav{
+        display:flex;
+        height: 8rem;
+        align-items: center;
+        /* justify-content: space-around; */
+        justify-content: flex end;
+        color: black;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .logo{
+        height: 6rem;
+        padding: 35px;
+    }
+
+    .logo img{
+        height: 100%;
+    }
+
+    nav ul{
+        display: inline-flex;
+        gap: 2rem;
+        flex-grow: 1;
+
+    }
+
+    .hid{
+        visibility: hidden;
+        height: 0.7rem;
+    }
+}
+
+
+
+
+.hamburgerBtn{
+    visibility: hidden;
+}
+
