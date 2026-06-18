@@ -12,9 +12,5 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HeaderNav />
     <Header />
-    <Main  />
-   {/*  <Footer /> */}
-    <Whats_button />
-    <CookiePage />
   </StrictMode>,
 )

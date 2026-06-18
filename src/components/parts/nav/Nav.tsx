@@ -21,8 +21,11 @@ export const HeaderNav = () => {
                     className={`hamburgerBtn ${menuOpen ? 'ativo' : ''}`} 
                     onClick={toggleMenu}
                     aria-label="Menu"
+                    aria-expanded={menuOpen}
                 >
-                    <img src="../src/assets/hamburger.png" alt="menu" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
 
                 <ul className={menuOpen ? 'menu-open' : ''}>
@@ -44,6 +47,13 @@ export const HeaderNav = () => {
                     <li><Pesquisa /></li>
                 </ul>
             </nav>
+
+            {/* Overlay — fecha o drawer ao clicar fora */}
+            <div
+                className={`menuOverlay ${menuOpen ? 'ativo' : ''}`}
+                onClick={() => setMenuOpen(false)}
+                aria-hidden="true"
+            />
         </Container>
     )
 }

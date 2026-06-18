@@ -1,57 +1,204 @@
-@media (min-width:768px) {
+/* ─── BASE NAV ─────────────────────────────────────────────────────────── */
 
-    .container{
-        width: 100%;   
+nav {
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.logo {
+    height: 3.5rem;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+/* ─── HAMBURGER BUTTON ─────────────────────────────────────────────────── */
+
+.hamburgerBtn {
+    display: none;           /* escondido no desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 200;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Ícone feito com CSS puro (3 barrinhas) */
+.hamburgerBtn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+    transform-origin: center;
+}
+
+/* Animação do X quando ativo */
+.hamburgerBtn.ativo span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburgerBtn.ativo span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburgerBtn.ativo span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ─── MOBILE  (< 768px) ────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+
+    nav {
+        height: auto;
+        padding: 0.75rem 1rem;
+        flex-wrap: nowrap;
+        position: relative;
     }
 
-    nav{
-        display:flex;
+    /* Exibe o botão hambúrguer */
+    .hamburgerBtn {
+        display: flex;
+        z-index: 1100;
+        position: relative;
+        margin-left: auto;  /* empurra para a direita no flexbox */
+    }
+
+    /* ── Overlay escuro atrás do drawer ── */
+    .menuOverlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 900;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+    }
+
+    .menuOverlay.ativo {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* ── Drawer lateral direito ── */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75vw;
+        max-width: 300px;
+        height: 100dvh;
+        background: #fff;
+        z-index: 1000;
+        padding: 5rem 0 2rem;
+        transform: translateX(100%);
+        transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Drawer aberto */
+    nav ul.menu-open {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        list-style: none;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.9rem 1.5rem;
+        font-size: 1.1rem;
+        color: #333;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav ul li a:hover {
+        background: #f5f5f5;
+        color: #000;
+    }
+
+    .hid {
+        display: none;
+    }
+}
+
+/* ─── DESKTOP (≥ 768px) ────────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+
+    .container {
+        width: 100%;
+    }
+
+    nav {
         height: 8rem;
-        align-items: center;
-        justify-content: space-between;
-        color: black;
-        font-weight: 500;
-        font-size: 1rem;
+        flex-wrap: nowrap;
     }
 
-    .logo{
-        height: 6rem;
+    .logo {
+        height: 4rem;
         padding: 35px;
     }
 
-    .logo img{
-        height: 100%;
+    /* Hambúrguer escondido no desktop */
+    .hamburgerBtn {
+        display: none;
     }
 
-    nav ul{
+    nav ul {
         display: inline-flex;
         gap: 2rem;
         flex-grow: 1;
         align-items: center;
         justify-content: space-between;
-
-
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
     }
 
     nav ul li {
-        list-style: none;
-        font-size 1.2rem;
+        font-size: 1.2rem;
     }
 
-    nav ul li a{
-        text-decoration: none;
-    }
-
-    .hid{
+    .hid {
         visibility: hidden;
         height: 0.7rem;
     }
 }
-
-
-
-
-.hamburgerBtn{
-    visibility: hidden;
-}
-
