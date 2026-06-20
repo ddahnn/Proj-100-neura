@@ -1,0 +1,204 @@
+.hero {
+    background-image:
+        linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.67) 100%),
+        url(./img/img-hero-header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--white);
+}
+
+.imgMidHero img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: 0;
+    max-width: 760px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.greenText {
+    color: var(--green);
+}
+
+.orangeText {
+    color: var(--yellow);
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.busco,
+.sou {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.hiddenIcon {
+    height: 13px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-15px);
+    transition:
+        opacity 0.3s ease-in-out,
+        visibility 0.3s ease-in-out,
+        transform 0.5s ease-in-out;
+}
+
+.busco:hover .hiddenIcon,
+.sou:hover .hiddenIcon,
+.busco:active .hiddenIcon,
+.sou:active .hiddenIcon {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    .hero {
+        min-height: 760px;
+        padding: 3rem 4rem;
+        align-items: center;
+    }
+
+    .imgMidHero {
+        display: none;
+    }
+
+    .heroText {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .heroText h1 {
+        font-size: 2.4rem;
+        word-spacing: 3px;
+        letter-spacing: 2px;
+        max-width: 100%;
+    }
+
+    .heroText h2 {
+        font-size: 1.7rem;
+        word-spacing: 3px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .heroText p {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin-top: 1rem;
+    }
+
+    .busco {
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: var(--cream);
+        color: var(--dark-purple);
+        box-shadow: 5px 5px var(--cream);
+        height: 2.8rem;
+        width: 280px;
+        padding: 15px;
+        margin: 18px auto 10px auto;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .sou {
+        color: var(--dark-purple);
+        background-color: var(--yellow);
+        border: 1px solid black;
+        border-radius: 50px;
+        box-shadow: 5px 5px var(--yellow);
+        height: 2.8rem;
+        width: 280px;
+        padding: 15px;
+        margin: 15px auto;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hero {
+        min-height: 700px;
+        background-position: center;
+    }
+
+    .imgMidHero {
+        display: none;
+    }
+
+    .heroText {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .heroText h1 {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+        text-transform: uppercase;
+    }
+
+    .heroText h2 {
+        font-size: 1.3rem;
+        word-spacing: 1px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .heroText p {
+        line-height: 1.2rem;
+    }
+
+    .busco {
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: var(--cream);
+        color: var(--dark-purple);
+        box-shadow: 5px 5px var(--cream);
+        height: 2.6rem;
+        width: 250px;
+        padding: 15px;
+        margin: 15px auto;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .sou {
+        color: var(--dark-purple);
+        background-color: var(--yellow);
+        border: 1px solid black;
+        border-radius: 50px;
+        box-shadow: 5px 5px var(--yellow);
+        height: 2.6rem;
+        width: 250px;
+        padding: 15px;
+        margin: 15px auto;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}

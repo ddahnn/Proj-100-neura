@@ -1,0 +1,102 @@
+:root {
+    --green: #61CE84;
+    --yellow: #ECAD53;
+    --cream: #F2F7F2;
+    --dark-green: #172617;
+    --dark-purple: #292130;
+    --purple-60: #441764;
+    --purple-40: #641898;
+    --purple-20: #8319CB;
+    --white: #fff;
+    --black: #000;
+    --purple-background: #7a00df;
+
+
+    /* Emerald */
+    --emerald-100: #DFF5E6;
+    --emerald-200: #C0EBCE;
+    --emerald-300: #A0E2B5;
+    --emerald-400: #81D89D;
+    --emerald-500: #61CE84; /* original */
+    --emerald-600: #52AF70;
+    --emerald-700: #44905C;
+    --emerald-800: #357149;
+    --emerald-900: #275235;
+
+    /* Sunlit Clay */
+    --sunlit-clay-100: #FBEFDD;
+    --sunlit-clay-200: #F7DEBA;
+    --sunlit-clay-300: #F4CE98;
+    --sunlit-clay-400: #F0BD75;
+    --sunlit-clay-500: #ECAD53; /* original */
+    --sunlit-clay-600: #C99347;
+    --sunlit-clay-700: #A5793A;
+    --sunlit-clay-800: #825F2E;
+    --sunlit-clay-900: #5E4521;
+
+    /* Mint Cream */
+    --mint-cream-100: #FCFDFC;
+    --mint-cream-200: #FAFCFA;
+    --mint-cream-300: #F7FAF7;
+    --mint-cream-400: #F5F9F5;
+    --mint-cream-500: #F2F7F2; /* original */
+    --mint-cream-600: #CED2CE;
+    --mint-cream-700: #A9ADA9;
+    --mint-cream-800: #858885;
+    --mint-cream-900: #616361;
+
+    /* Evergreen */
+    --evergreen-100: #D1D4D1;
+    --evergreen-200: #A2A8A2;
+    --evergreen-300: #747D74;
+    --evergreen-400: #455145;
+    --evergreen-500: #172617; /* original */
+    --evergreen-600: #142014;
+    --evergreen-700: #101B10;
+    --evergreen-800: #0D150D;
+    --evergreen-900: #090F09;
+
+    /* Midnight Violet */
+    --midnight-violet-100: #D4D3D6;
+    --midnight-violet-200: #A9A6AC;
+    --midnight-violet-300: #7F7A83;
+    --midnight-violet-400: #544D59;
+    --midnight-violet-500: #292130; /* original */
+    --midnight-violet-600: #231C29;
+    --midnight-violet-700: #1D1722;
+    --midnight-violet-800: #17121A;
+    --midnight-violet-900: #100D13;
+
+    /* Dark Amethyst */
+    --dark-amethyst-100: #DAD1E0;
+    --dark-amethyst-200: #B4A2C1;
+    --dark-amethyst-300: #8F74A2;
+    --dark-amethyst-400: #694583;
+    --dark-amethyst-500: #441764; /* original */
+    --dark-amethyst-600: #3A1455;
+    --dark-amethyst-700: #301046;
+    --dark-amethyst-800: #250D37;
+    --dark-amethyst-900: #1B0928;
+
+    /* Indigo Bloom */
+    --indigo-bloom-100: #E0D1EA;
+    --indigo-bloom-200: #C1A3D6;
+    --indigo-bloom-300: #A274C1;
+    --indigo-bloom-400: #8346AD;
+    --indigo-bloom-500: #641898; /* original */
+    --indigo-bloom-600: #551481;
+    --indigo-bloom-700: #46116A;
+    --indigo-bloom-800: #370D54;
+    --indigo-bloom-900: #280A3D;
+
+    /* Royal Violet */
+    --royal-violet-100: #E6D1F5;
+    --royal-violet-200: #CDA3EA;
+    --royal-violet-300: #B575E0;
+    --royal-violet-400: #9C47D5;
+    --royal-violet-500: #8319CB; /* original */
+    --royal-violet-600: #6F15AD;
+    --royal-violet-700: #5C128E;
+    --royal-violet-800: #480E70;
+    --royal-violet-900: #340A51;
+}
