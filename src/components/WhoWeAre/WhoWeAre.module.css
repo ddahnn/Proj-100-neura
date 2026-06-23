@@ -1,104 +1,284 @@
+/* 
+  SEÇÃO PRINCIPAL
+  Área inteira do bloco "Quem somos".
+*/
 .whoWeAre {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    padding: 3rem 2rem;
-    
-    color: var(--white);
+  width: 100%;
+  z-index: 3;
+  background-color: #ffffff;
+  position: relative;
 }
 
+/* 
+  CONTAINER CENTRAL
+  Limita a largura máxima do conteúdo.
+*/
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 
+  ÁREA DA FOTO
+  Segura a imagem dos criadores.
+*/
 .figure {
-    flex: 1;
+  margin: 0;
+  width: 100%;
+  max-width: 590px;
+  position: relative;
+  z-index: 16;
+
+  /*
+    Esconde a parte da imagem caso ela se mova
+    para fora dos limites do figure.
+  */
+  overflow: visible;
 }
 
-.figure img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+/* 
+  IMAGEM DOS CRIADORES
+  A transição mais longa faz a imagem se mover devagar.
+*/
+.creatorsImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  /*
+    Quanto maior o tempo, mais devagar a foto se move.
+    Exemplos:
+    0.6s = rápido
+    1.4s = médio/lento
+    2s = bem lento
+  */
+  transition: transform 1.3s ease;
+
+  /*
+    Ajuda o navegador a otimizar a animação.
+  */
+  will-change: transform;
 }
 
-.textContent {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: var(--purple-background);
-    padding: 2.5rem;
+/* 
+  QUANDO O USUÁRIO ROLA PARA BAIXO
+  A imagem sobe suavemente.
+*/
+.imageUp {
+  transform: translateY(-50px);
 }
 
+/* 
+  QUANDO O USUÁRIO ROLA PARA CIMA
+  A imagem volta/desce para a posição original.
+*/
+.imageDown {
+  transform: translateY(+50px);
+}
+
+/* 
+  CARD ROXO SOBREPOSTO
+*/
+.card {
+  width: 100%;
+  max-width:550px;
+
+  background-color: #3d0059;
+  color: #ffffff;
+
+  padding: 42px 38px;
+  position: relative;
+  z-index: 20;
+
+  /*
+    Esses margins criam o efeito do card sobreposto:
+    - margin-left: auto joga o card para a direita;
+    - margin-right controla o quanto ele fica afastado da borda;
+    - margin-top negativo faz o card subir.
+  */
+  margin-left: auto;
+  margin-right: 90px;
+  margin-top: -32px;
+}
+
+/* 
+  TÍTULO "Oi, prazer!"
+*/
+.card h2 {
+  margin: 0 0 24px;
+
+  color: #ffffff;
+  font-size: 3rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: oblique;
+}
+
+/* 
+  SUBTÍTULO COLORIDO
+*/
+.card h3 {
+  margin: 0 0 28px;
+
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  font-weight:600;
+}
+
+/* 
+  PARÁGRAFOS
+*/
+.card p {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+/* 
+  TEXTOS EM NEGRITO
+*/
+.card strong {
+  font-weight: 900;
+}
+
+/* 
+  TEXTO VERDE
+*/
 .greenText {
-    color: var(--green);
+  color: #57e389;
 }
 
+/* 
+  TEXTO LARANJA
+*/
 .orangeText {
-    color: var(--yellow);
+  color: #ffb02e;
 }
 
-.bold {
-    font-weight: 700;
-}
+/* 
+  BOTÃO "SAIBA MAIS"
+*/
+
+
 
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 220px;
-    min-height: 2.6rem;
-    margin-top: 1rem;
-    padding: 14px;
-    border: 1px solid var(--black);
-    border-radius: 50px;
-    background-color: var(--yellow);
-    box-shadow: 5px 5px var(--yellow);
-    color: var(--dark-purple);
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 12px;
+  padding: 16px 34px;
+
+  background-color: #ffffff;
+  color: #111111;
+
+  border: 2px solid #111111;
+  border-radius: 999px;
+
+  font-size: .7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+
+  box-shadow: 7px 7px 0 #f4a529;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hiddenIcon {
-    height: 13px;
-    opacity: 0;
+.hid{
+    height: .7rem;
+    transform: translateX(-.3rem);
+    transition: all .3s ease-in-out;
     visibility: hidden;
-    transform: translateX(-15px);
-    transition:
-        opacity 0.3s ease-in-out,
-        visibility 0.3s ease-in-out,
-        transform 0.5s ease-in-out;
 }
 
-.button:hover .hiddenIcon,
-.button:active .hiddenIcon {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+/* 
+  EFEITO DO BOTÃO AO PASSAR O MOUSE
+*/
+.button:hover .hid{
+  transform: translate(4px, 4px);
+  transform: translateX(0);
+  visibility: visible;
 }
 
-figure{
-    
+/* 
+  TABLET / CELULAR
+*/
+@media (max-width: 900px) {
+  .whoWeAre {
+/*     padding: 40px 20px ; */
+  }
+
+  .figure {
+    max-width: 100%;
+  }
+
+  .card {
+    max-width: 100%;
+    margin: -20px auto 0;
+    padding: 0;
+  }
+
+  .card h1 {
+    font-size: 38px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  /*
+    No celular a imagem sobe menos,
+    para o efeito não ficar exagerado.
+  */
+  .imageUp {
+    transform: translateY(-25px);
+  }
 }
 
-@media screen and (max-width: 1024px) {
-    .whoWeAre {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem;
-    }
+/* 
+  CELULARES PEQUENOS
+*/
+@media (max-width: 480px) {
+  .whoWeAre {
+    padding: 32px 16px 50px;
+  }
 
-    .button {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
+  .card {
+    padding: 28px 20px;
+  }
 
-@media screen and (max-width: 800px) {
-    .whoWeAre {
-        margin: 25px;
-        width: auto;
-        padding: 1.5rem;
-    }
+  .card h1 {
+    font-size: 34px;
+  }
+
+  .card h3 {
+    font-size: 12px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 14px 28px;
+    font-size: 12px;
+  }
+
+  .imageUp {
+    transform: translateY(-20px);
+  }
 }

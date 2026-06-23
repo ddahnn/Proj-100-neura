@@ -1,12 +1,16 @@
-import {  useEffect, useState,  FormEvent } from "react";
+import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const menuItems = [
-    { label: "Home", href: "/", title: "Ir para a página inicial" },
-    { label: "Quem Somos", href: "#quem-somos", title: "Conheça o 100 Neura" },
-    { label: "Busco Terapia", href: "#busco-terapia", title: "Encontre terapia online" },
-    { label: "Sou Terapeuta", href: "#sou-terapeuta", title: "Área para terapeutas" },
-    { label: "Blog", href: "#blog", title: "Leia conteúdos sobre saúde mental e terapia" },
+    { label: "Home", href: "/", title: "Ir para a página inicial", isRoute: true },
+    { label: "Quem Somos", href: "#quem-somos", title: "Conheça o 100 Neura", isRoute: false },
+    { label: "Busco Terapia", href: "#busco-terapia", title: "Encontre terapia online", isRoute: false },
+    { label: "Sou Terapeuta", href: "#sou-terapeuta", title: "Área para terapeutas", isRoute: false },
+    { label: "Blog", href: "#blog", title: "Leia conteúdos sobre saúde mental e terapia", isRoute: false },
+    { label: "Sobre", href: "/sobre", title: "Conheça mais sobre o 100 Neura", isRoute: true },
+    { label: "Contato", href: "/contato", title: "Entre em contato", isRoute: true },
 ];
 
 export function Header() {
@@ -67,12 +71,12 @@ export function Header() {
         <header className={styles.header}>
             <div className={styles.headerContent}>
                 <figure className={styles.logoContainer}>
-                    <a href="/" aria-label="Página inicial do 100 Neura">
+                    <Link to="/" aria-label="Página inicial do 100 Neura">
                         <img
                             src="../assets/100-neura-logo-grande-escuro.png"
                             alt="Logo 100 Neura - terapia para quem sente o mundo diferente"
                         />
-                    </a>
+                    </Link>
                 </figure>
 
                 <nav
@@ -83,9 +87,15 @@ export function Header() {
                     <ul className={styles.menuList}>
                         {menuItems.map((item) => (
                             <li key={item.label} className={styles.menuItem}>
-                                <a href={item.href} title={item.title} onClick={closeMenu}>
-                                    {item.label}
-                                </a>
+                                {item.isRoute ? (
+                                    <Link to={item.href} title={item.title} onClick={closeMenu}>
+                                        {item.label}
+                                    </Link>
+                                ) : (
+                                    <a href={item.href} title={item.title} onClick={closeMenu}>
+                                        {item.label}
+                                    </a>
+                                )}
                             </li>
                         ))}
 

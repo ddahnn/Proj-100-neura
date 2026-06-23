@@ -23,3 +23,11 @@ body {
 body.no-scroll {
     overflow: hidden;
 }
+
+.orangeText {
+    color: var(--text-yellow);
+}
+
+.greenText {
+    color: var(--text-green);
+}

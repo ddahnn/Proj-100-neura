@@ -1,44 +1,104 @@
+import { useEffect, useRef, useState } from "react";
 import styles from "./WhoWeAre.module.css";
 
 export function WhoWeAre() {
-    return (
+const imageRef = useRef<HTMLImageElement | null>(null);
 
-        
-        <section id="quem-somos" className={ styles.whoWeAre}>
-            <figure className={styles.figure}>
-                <img
-                    src="assets\criadores.jpg"
-                    alt="Dahn e Nands, fundadores do 100 neura terapia para quem sente o mundo diferente" className={styles.CreatorsMobile}
-                />
-            </figure>
+const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
+const [canAnimate, setCanAnimate] = useState(false);
 
-            <div className={styles.textContent}>
-                <h1>Oi, prazer!</h1>
+useEffect(() => {
+    let lastScrollY = window.scrollY;
 
-                <h3>
-                    <span className={styles.greenText}>somos</span>{" "}
-                    <span className={styles.orangeText}>nands</span> E{" "}
-                    <span className={styles.orangeText}>dahn</span>
-                    <span className={styles.greenText}>, criadores do</span> 100 neura.
-                </h3>
+    function handleScroll() {
+    const currentScrollY = window.scrollY;
 
-                <p>
-                    Somos ambos <span className={styles.bold}>terapeutas neurodivergentes</span> (Dahn é TDAH e Nands
-                    autista), então sabemos especialmente a importância de{" "}
-                    <span className={styles.bold}>um bom acompanhamento de saúde na área da mental.</span>
-                </p>
+    if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+    } else {
+        setScrollDirection("up");
+    }
 
-                <p>
-                    Nossa experiência anterior na área da <span className={styles.bold}>comunicação</span> e da{" "}
-                    <span className={styles.bold}>tecnologia</span> nos permitiram criar essa plataforma pensando em{" "}
-                    <span className={styles.bold}>conectar terapeutas e pessoas em busca de terapia.</span>
-                </p>
+    lastScrollY = currentScrollY;
+    }
 
-                <a href="#saiba-mais" className={styles.button}>
-                    Saiba mais
-                    <img src="/resource/img/seta.png" alt="" className={styles.hiddenIcon} />
-                </a>
-            </div>
-        </section>
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+    window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
+
+useEffect(() => {
+    const image = imageRef.current;
+
+    if (!image) return;
+
+    const observer = new IntersectionObserver(
+    ([entry]) => {
+        setCanAnimate(entry.isIntersecting);
+    },
+    {
+        /*
+        threshold: 0.5 significa:
+        só ativa quando 50% da imagem estiver visível na tela.
+        */
+        threshold: 0.5,
+    }
     );
+
+    observer.observe(image);
+
+    return () => {
+    observer.unobserve(image);
+    };
+}, []);
+
+return (
+    <section id="quem-somos" className={styles.whoWeAre}>
+    <div className={styles.container}>
+        <figure className={styles.figure}>
+        <img
+            ref={imageRef}
+            src="/assets/criadores.jpg"
+            alt="Dahn e Nands, fundadores do 100 neura"
+            className={`${styles.creatorsImage} ${
+            canAnimate && scrollDirection === "down"
+                ? styles.imageUp
+                : styles.imageDown
+            }`}
+        />
+        </figure>
+
+        <div className={styles.card}>
+        <h2>Oi, prazer!</h2>
+
+        <h3>
+            <span className={styles.greenText}>somos</span>{" "}
+            <span className={styles.orangeText}>nands</span> e{" "}
+            <span className={styles.orangeText}>dahn</span>
+            <span className={styles.greenText}>, criadores do</span> 100 neura.
+        </h3>
+
+        <p>
+            Somos ambos <strong>terapeutas neurodivergentes</strong> — Dahn é
+            TDAH e Nands autista — então sabemos especialmente a importância de
+            um bom acompanhamento de saúde na área da mental.
+        </p>
+
+        <p>
+            Nossa experiência anterior na área da <strong>comunicação</strong>{" "}
+            e da <strong>tecnologia</strong> nos permitiram criar essa
+            plataforma pensando em conectar terapeutas e pessoas em busca de
+            terapia.
+        </p>
+
+        <a href="#saiba-mais" className={styles.button}>
+                    Saiba mais
+                    <img src="assets/seta.png" alt="" className={ styles.hid} />
+        </a>
+        </div>
+    </div>
+    </section>
+);
 }
