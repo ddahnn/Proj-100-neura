@@ -30,36 +30,19 @@
   max-width: 590px;
   position: relative;
   z-index: 16;
-
-  /*
-    Esconde a parte da imagem caso ela se mova
-    para fora dos limites do figure.
-  */
   overflow: visible;
 }
 
 /* 
   IMAGEM DOS CRIADORES
-  A transição mais longa faz a imagem se mover devagar.
+  No desktop ela pode animar.
 */
 .creatorsImage {
   display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
-
-  /*
-    Quanto maior o tempo, mais devagar a foto se move.
-    Exemplos:
-    0.6s = rápido
-    1.4s = médio/lento
-    2s = bem lento
-  */
   transition: transform 1.3s ease;
-
-  /*
-    Ajuda o navegador a otimizar a animação.
-  */
   will-change: transform;
 }
 
@@ -73,10 +56,10 @@
 
 /* 
   QUANDO O USUÁRIO ROLA PARA CIMA
-  A imagem volta/desce para a posição original.
+  A imagem desce suavemente.
 */
 .imageDown {
-  transform: translateY(+50px);
+  transform: translateY(50px);
 }
 
 /* 
@@ -84,7 +67,7 @@
 */
 .card {
   width: 100%;
-  max-width:550px;
+  max-width: 550px;
 
   background-color: #3d0059;
   color: #ffffff;
@@ -93,12 +76,6 @@
   position: relative;
   z-index: 20;
 
-  /*
-    Esses margins criam o efeito do card sobreposto:
-    - margin-left: auto joga o card para a direita;
-    - margin-right controla o quanto ele fica afastado da borda;
-    - margin-top negativo faz o card subir.
-  */
   margin-left: auto;
   margin-right: 90px;
   margin-top: -32px;
@@ -128,7 +105,7 @@
   font-size: 1.5rem;
   line-height: 1.25;
   text-transform: uppercase;
-  font-weight:600;
+  font-weight: 600;
 }
 
 /* 
@@ -138,7 +115,7 @@
   margin: 0 0 20px;
 
   color: #ffffff;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 
@@ -166,9 +143,6 @@
 /* 
   BOTÃO "SAIBA MAIS"
 */
-
-
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -183,7 +157,7 @@
   border: 2px solid #111111;
   border-radius: 999px;
 
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
@@ -194,18 +168,17 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hid{
-    height: .7rem;
-    transform: translateX(-.3rem);
-    transition: all .3s ease-in-out;
-    visibility: hidden;
+.hid {
+  height: 0.7rem;
+  transform: translateX(-0.3rem);
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
 }
 
 /* 
   EFEITO DO BOTÃO AO PASSAR O MOUSE
 */
-.button:hover .hid{
-  transform: translate(4px, 4px);
+.button:hover .hid {
   transform: translateX(0);
   visibility: visible;
 }
@@ -214,21 +187,33 @@
   TABLET / CELULAR
 */
 @media (max-width: 900px) {
-  .whoWeAre {
-/*     padding: 40px 20px ; */
+  .figure {
+    max-width: 90%;
+    position: relative;
+    z-index: 16;
+    overflow: visible;
+    margin: 0 auto;
   }
 
-  .figure {
-    max-width: 100%;
+  /*
+    Aqui desligamos totalmente o efeito da imagem no mobile.
+    Ela fica como uma imagem comum.
+  */
+  .creatorsImage,
+  .imageUp,
+  .imageDown {
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
   }
 
   .card {
-    max-width: 100%;
-    margin: -20px auto 0;
-    padding: 0;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
   }
 
-  .card h1 {
+  .card h2 {
     font-size: 38px;
   }
 
@@ -238,14 +223,6 @@
 
   .card p {
     font-size: 14px;
-  }
-
-  /*
-    No celular a imagem sobe menos,
-    para o efeito não ficar exagerado.
-  */
-  .imageUp {
-    transform: translateY(-25px);
   }
 }
 
@@ -257,11 +234,27 @@
     padding: 32px 16px 50px;
   }
 
+  .figure {
+    max-width: 100%;
+    position: relative;
+  }
+
+  /*
+    Mantém a imagem normal também em celulares menores.
+  */
+  .creatorsImage,
+  .imageUp,
+  .imageDown {
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+
   .card {
     padding: 28px 20px;
   }
 
-  .card h1 {
+  .card h2 {
     font-size: 34px;
   }
 
@@ -274,11 +267,7 @@
   }
 
   .button {
-    padding: 14px 28px;
-    font-size: 12px;
-  }
-
-  .imageUp {
-    transform: translateY(-20px);
+    padding: 10px 28px;
+    font-size: .7rem;
   }
 }

@@ -9,7 +9,7 @@ export default function Footer() {
       <ul className={styles.containerList}>
         <li className={styles.listComponents}>
           <figure>
-            <img src="assets/logo-verde.png" alt="logo 100 neura - terapia sem neura do seu jeito" />
+            {/* <img src="assets/logo-verde.png" alt="logo 100 neura - terapia sem neura do seu jeito" /> */}
           </figure>
         </li> <div className={styles.bar}></div>
         <li className={styles.listComponents}>

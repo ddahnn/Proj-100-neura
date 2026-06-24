@@ -6,8 +6,33 @@ const imageRef = useRef<HTMLImageElement | null>(null);
 
 const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
 const [canAnimate, setCanAnimate] = useState(false);
+const [isMobile, setIsMobile] = useState(false);
 
+/*
+    Verifica se a tela é mobile.
+    Se for menor ou igual a 900px, a imagem não recebe efeito.
+*/
 useEffect(() => {
+    function checkIfMobile() {
+    setIsMobile(window.innerWidth <= 900);
+    }
+
+    checkIfMobile();
+
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+    window.removeEventListener("resize", checkIfMobile);
+    };
+}, []);
+
+/*
+    Detecta a direção do scroll.
+    Esse efeito continua existindo para desktop.
+*/
+useEffect(() => {
+    if (isMobile) return;
+
     let lastScrollY = window.scrollY;
 
     function handleScroll() {
@@ -27,9 +52,15 @@ useEffect(() => {
     return () => {
     window.removeEventListener("scroll", handleScroll);
     };
-}, []);
+}, [isMobile]);
 
+/*
+    Observa quando a imagem aparece na tela.
+    No mobile isso não roda, porque não precisamos animar.
+*/
 useEffect(() => {
+    if (isMobile) return;
+
     const image = imageRef.current;
 
     if (!image) return;
@@ -39,10 +70,6 @@ useEffect(() => {
         setCanAnimate(entry.isIntersecting);
     },
     {
-        /*
-        threshold: 0.5 significa:
-        só ativa quando 50% da imagem estiver visível na tela.
-        */
         threshold: 0.5,
     }
     );
@@ -52,7 +79,14 @@ useEffect(() => {
     return () => {
     observer.unobserve(image);
     };
-}, []);
+}, [isMobile]);
+
+const imageAnimationClass =
+    !isMobile && canAnimate && scrollDirection === "down"
+    ? styles.imageUp
+    : !isMobile
+    ? styles.imageDown
+    : "";
 
 return (
     <section id="quem-somos" className={styles.whoWeAre}>
@@ -62,11 +96,7 @@ return (
             ref={imageRef}
             src="/assets/criadores.jpg"
             alt="Dahn e Nands, fundadores do 100 neura"
-            className={`${styles.creatorsImage} ${
-            canAnimate && scrollDirection === "down"
-                ? styles.imageUp
-                : styles.imageDown
-            }`}
+            className={`${styles.creatorsImage} ${imageAnimationClass}`}
         />
         </figure>
 
@@ -94,8 +124,8 @@ return (
         </p>
 
         <a href="#saiba-mais" className={styles.button}>
-                    Saiba mais
-                    <img src="assets/seta.png" alt="" className={ styles.hid} />
+            Saiba mais
+            <img src="/assets/seta.png" alt="" className={styles.hid} />
         </a>
         </div>
     </div>

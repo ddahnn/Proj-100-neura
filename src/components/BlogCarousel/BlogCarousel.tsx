@@ -109,24 +109,26 @@ return (
     <Swiper
         className={styles.slider}
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={16}
-        slidesPerView={1.15}
-        centeredSlides={false}
+        spaceBetween={20}
+        slidesPerView={1}
+            centeredSlides={false}
+            loop={true}
         navigation
         pagination={{ clickable: true }}
         autoplay={{
         delay: 5000,
         disableOnInteraction: false,
         }}
-        breakpoints={{
-        640: {
-            slidesPerView:1,
-            spaceBetween: 20,
-        },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-        },
+            breakpoints={{
+
+                640: {
+                    slidesPerView:1,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+            },
         }}
     >
         {posts.map((post) => {
