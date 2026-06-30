@@ -15,7 +15,7 @@
 
 .hero{
 
-    background-image:linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0,0,0, .7)),
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9),  rgba(0,0,0, .8)),
         url(./img/img-hero-header.jpg); 
     z-index: -2;
     background-size: cover;
@@ -49,7 +49,7 @@
 }
 
 .title{
-    font-size: 2.2rem;
+    font-size: clamp(1rem, 1.5rem, 2.2rem);
     font-weight: 700;
     color: var(--white);
     text-transform:uppercase;
@@ -57,14 +57,14 @@
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: (.75rem, 1rem,1.5rem);
     font-weight: 700;
     color: var(--white);
 
 }
 
 .description {
-    font-size: 1.25rem;
+    font-size: clamp(.5rem, .85rem, 1.25rem);
     font-weight: 400;
     color: var(--white);
     width: 98%;
@@ -126,7 +126,7 @@
 
 
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media  (max-width:800px) {
 
     .creatorsImage {
         position: fixed;
@@ -188,7 +188,7 @@
     }
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
         .imgMidHero{
             visibility: hidden;
@@ -249,3 +249,25 @@
 
 
     }
+
+
+@media (min-width: 320px){
+
+    .heroText{
+        width: 80%;
+        margin-left: 9%;
+    }
+
+    .title{
+        font-size: 1.2rem;
+    }
+
+    .subtitle{
+        font-size: 1rem;
+    }
+
+    .description{
+        font-size: .8rem;
+    }
+
+}

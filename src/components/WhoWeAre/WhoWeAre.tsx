@@ -8,10 +8,7 @@ const [scrollDirection, setScrollDirection] = useState<"up" | "down">("up");
 const [canAnimate, setCanAnimate] = useState(false);
 const [isMobile, setIsMobile] = useState(false);
 
-/*
-    Verifica se a tela é mobile.
-    Se for menor ou igual a 900px, a imagem não recebe efeito.
-*/
+
 useEffect(() => {
     function checkIfMobile() {
     setIsMobile(window.innerWidth <= 900);
@@ -26,10 +23,7 @@ useEffect(() => {
     };
 }, []);
 
-/*
-    Detecta a direção do scroll.
-    Esse efeito continua existindo para desktop.
-*/
+
 useEffect(() => {
     if (isMobile) return;
 
@@ -54,10 +48,7 @@ useEffect(() => {
     };
 }, [isMobile]);
 
-/*
-    Observa quando a imagem aparece na tela.
-    No mobile isso não roda, porque não precisamos animar.
-*/
+
 useEffect(() => {
     if (isMobile) return;
 
@@ -101,7 +92,7 @@ return (
         </figure>
 
         <div className={styles.card}>
-        <h2>Oi, prazer!</h2>
+        <span className={styles.hi}  >Oi, prazer!</span>
 
         <h3>
             <span className={styles.greenText}>somos</span>{" "}

@@ -1,18 +1,12 @@
-/* 
-  SEÇÃO PRINCIPAL
-  Área inteira do bloco "Quem somos".
-*/
+@import url("/src/styles/theme.css");
 .whoWeAre {
   width: 100%;
   z-index: 3;
-  background-color: #ffffff;
+  background-color: var(--cream);
   position: relative;
 }
 
-/* 
-  CONTAINER CENTRAL
-  Limita a largura máxima do conteúdo.
-*/
+
 .container {
   width: 100%;
   max-width: 1080px;
@@ -20,10 +14,7 @@
   position: relative;
 }
 
-/* 
-  ÁREA DA FOTO
-  Segura a imagem dos criadores.
-*/
+
 .figure {
   margin: 0;
   width: 100%;
@@ -33,10 +24,7 @@
   overflow: visible;
 }
 
-/* 
-  IMAGEM DOS CRIADORES
-  No desktop ela pode animar.
-*/
+
 .creatorsImage {
   display: block;
   width: 100%;
@@ -46,25 +34,17 @@
   will-change: transform;
 }
 
-/* 
-  QUANDO O USUÁRIO ROLA PARA BAIXO
-  A imagem sobe suavemente.
-*/
+
 .imageUp {
   transform: translateY(-50px);
 }
 
-/* 
-  QUANDO O USUÁRIO ROLA PARA CIMA
-  A imagem desce suavemente.
-*/
+
 .imageDown {
   transform: translateY(50px);
 }
 
-/* 
-  CARD ROXO SOBREPOSTO
-*/
+
 .card {
   width: 100%;
   max-width: 550px;
@@ -81,9 +61,7 @@
   margin-top: -32px;
 }
 
-/* 
-  TÍTULO "Oi, prazer!"
-*/
+
 .card h2 {
   margin: 0 0 24px;
 
@@ -95,9 +73,7 @@
   font-style: oblique;
 }
 
-/* 
-  SUBTÍTULO COLORIDO
-*/
+
 .card h3 {
   margin: 0 0 28px;
 
@@ -108,9 +84,7 @@
   font-weight: 600;
 }
 
-/* 
-  PARÁGRAFOS
-*/
+
 .card p {
   margin: 0 0 20px;
 
@@ -119,52 +93,36 @@
   line-height: 1.7;
 }
 
-/* 
-  TEXTOS EM NEGRITO
-*/
 .card strong {
   font-weight: 900;
 }
 
-/* 
-  TEXTO VERDE
-*/
+
 .greenText {
   color: #57e389;
 }
 
-/* 
-  TEXTO LARANJA
-*/
 .orangeText {
   color: #ffb02e;
 }
 
-/* 
-  BOTÃO "SAIBA MAIS"
-*/
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   margin-top: 12px;
   padding: 16px 34px;
-
   background-color: #ffffff;
   color: #111111;
-
   border: 2px solid #111111;
   border-radius: 999px;
-
   font-size: 0.7rem;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-
   box-shadow: 7px 7px 0 #f4a529;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -186,7 +144,7 @@
 /* 
   TABLET / CELULAR
 */
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .figure {
     max-width: 90%;
     position: relative;

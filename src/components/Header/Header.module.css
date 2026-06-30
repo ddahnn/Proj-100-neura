@@ -3,7 +3,7 @@
 header {
 
     width: 100%;
-    height: 150px;
+    height: 130px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,8 +23,9 @@ header {
 
 
 .logoContainer {
-    height: 4.5rem;
-    width: 8.5rem;
+    height: 3.5rem;
+    width: 6.5rem;
+    margin-left: 5px;
 }
 
 .logoContainer img {
@@ -49,21 +50,29 @@ header {
     margin: 0;
     padding: 0;
     min-width: 0;
+    
 }
 
 .menuItem a,
 .register a,
 .login a {
     text-decoration: none;
-    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    font-size: clamp(0.63rem, .7vw, 1rem);
     margin-left: 0;
     white-space: wrap;
 }
 
 
+.menuItem  :hover {
+    border-bottom: 2px solid var(--emerald-900);
+    
+}
+
 .menuItem a {
     color: var(--purple-40);
+    transition: border-bottom .3s ease-in-out;
     font-weight: 400;
+    border-bottom: 2px solid transparent;
     letter-spacing: .5px;
 }
 
@@ -91,15 +100,15 @@ header {
 .login a {
     width: 100%;
     height: 100%;
-    padding: 0;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4px;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 300;
     transition: color 0.3s ease;
-    font-size: clamp(0.75rem, 1vw, 0.95rem);
+    font-size: clamp(0.65rem, 1vw, 0.95rem);
     white-space: wrap;
 }
 
@@ -224,7 +233,7 @@ header {
     box-shadow: inset 2px 2px 2px rgba(128, 0, 128, 0.15);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     .header {
         padding: 16px 20px;
     }
