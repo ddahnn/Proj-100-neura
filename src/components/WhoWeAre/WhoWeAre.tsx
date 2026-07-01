@@ -92,7 +92,7 @@ return (
         </figure>
 
         <div className={styles.card}>
-        <span className={styles.hi}  >Oi, prazer!</span>
+        <span className={styles.titleCard}  >Oi, prazer!</span>
 
         <h3>
             <span className={styles.greenText}>somos</span>{" "}

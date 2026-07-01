@@ -1,0 +1,13 @@
+@import url('../../styles/theme.css');
+.bold{
+  font-weight: 700;
+}
+
+.greenText{
+  color:var(--emerald-600);
+}
+
+.hid{
+  visibility: hidden;
+  height: 12px;
+}

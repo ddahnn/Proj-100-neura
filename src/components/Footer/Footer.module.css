@@ -1,0 +1,66 @@
+@import url('../../styles/theme.css');
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+footer{
+    background-color: var(--dark-amethyst-700);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    height: 500px;
+    flex-direction: row;
+}
+
+.bar{
+    width: .005vw;
+    height: 10rem;
+    background-color:rgba(255, 255, 255, 0.2);
+}
+
+.containerList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+.listComponents{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logoLink img{
+    height: 15rem ;
+}
+
+.footerNav {
+    display: block;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.footerNav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footerNav a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footerNav a:hover {
+    color: var(--cream);
+}

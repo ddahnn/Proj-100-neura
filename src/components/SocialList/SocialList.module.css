@@ -1,0 +1,46 @@
+@import url('../../styles/theme.css');
+
+.socialIcons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.instaLink {
+    color: var(--cream);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+.instaLink:hover {
+    transform: scale(1.2);
+    color:#E1306C;
+}
+
+.whatslLink {
+    color: var(--cream);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+
+}
+
+.whatslLink:hover {
+    transform: scale(1.2);
+    color:#128c7e;
+}
+
+.linkedInLink {
+    color: var(--cream);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+
+}
+
+.linkedInLink:hover {
+    transform: scale(1.2);
+    color:#0e76a8;
+}
+
+
+

@@ -5,10 +5,10 @@ import styles from "./Header.module.css";
 
 const menuItems = [
     { label: "Home", href: "/", title: "Ir para a página inicial", isRoute: true },
-    { label: "Quem Somos", href: "#quem-somos", title: "Conheça o 100 Neura", isRoute: false },
-    { label: "Busco Terapia", href: "#busco-terapia", title: "Encontre terapia online", isRoute: false },
-    { label: "Sou Terapeuta", href: "#sou-terapeuta", title: "Área para terapeutas", isRoute: false },
-    { label: "Blog", href: "#blog", title: "Leia conteúdos sobre saúde mental e terapia", isRoute: false },
+    { label: "Quem Somos", href: "/quemSomos", title: "Conheça o 100 Neura", isRoute: true },
+    { label: "Busco Terapia", href: "/busco-terapia", title: "Encontre terapia online", isRoute: true },
+    { label: "Sou Terapeuta", href: "/sou-terapeuta", title: "Área para terapeutas", isRoute: true },
+    { label: "Blog", href: "/blog", title: "Leia conteúdos sobre saúde mental e terapia", isRoute: true },
     { label: "Sobre", href: "/sobre", title: "Conheça mais sobre o 100 Neura", isRoute: true },
     { label: "Contato", href: "/contato", title: "Entre em contato", isRoute: true },
 ];

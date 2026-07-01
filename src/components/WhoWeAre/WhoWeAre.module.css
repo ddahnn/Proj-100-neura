@@ -1,4 +1,4 @@
-@import url("/src/styles/theme.css");
+@import url('../../styles/theme.css');
 .whoWeAre {
   width: 100%;
   z-index: 3;
@@ -32,6 +32,7 @@
   object-fit: cover;
   transition: transform 1.3s ease;
   will-change: transform;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -62,7 +63,7 @@
 }
 
 
-.card h2 {
+.card .titleCard {
   margin: 0 0 24px;
 
   color: #ffffff;
@@ -75,8 +76,8 @@
 
 
 .card h3 {
-  margin: 0 0 28px;
-
+  padding-top: 20px;
+  margin: 0 0 20px 0 ;
   color: #ffffff;
   font-size: 1.5rem;
   line-height: 1.25;
@@ -171,7 +172,7 @@
     padding: 2rem;
   }
 
-  .card h2 {
+  .card .titleCard {
     font-size: 38px;
   }
 
@@ -212,9 +213,6 @@
     padding: 28px 20px;
   }
 
-  .card h2 {
-    font-size: 34px;
-  }
 
   .card h3 {
     font-size: 12px;
